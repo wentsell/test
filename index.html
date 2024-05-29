@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankieta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="survey-container">
+        <div class="survey-step active" id="step-1">
+            <h2>Witaj w naszej ankiecie!</h2>
+            <p>Proszę odpowiedz na kilka pytań.</p>
+            <button onclick="nextStep(2)">Zaczynamy</button>
+        </div>
+        <div class="survey-step" id="step-2">
+            <h2>Pytanie 1</h2>
+            <p>Jak oceniłbyś naszą usługę?</p>
+            <input type="range" min="1" max="5" step="1" id="question-1">
+            <button onclick="prevStep(1)">Wstecz</button>
+            <button onclick="nextStep(3)">Dalej</button>
+        </div>
+        <div class="survey-step" id="step-3">
+            <h2>Pytanie 2</h2>
+            <p>Co możemy poprawić?</p>
+            <textarea id="question-2" rows="4"></textarea>
+            <button onclick="prevStep(2)">Wstecz</button>
+            <button onclick="nextStep(4)">Dalej</button>
+        </div>
+        <div class="survey-step" id="step-4">
+            <h2>Dziękujemy za odpowiedzi!</h2>
+            <p>Twoje opinie są dla nas bardzo ważne.</p>
+            <button onclick="prevStep(3)">Wstecz</button>
+            <button onclick="submitSurvey()">Zakończ</button>
+        </div>
+    </div>
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
